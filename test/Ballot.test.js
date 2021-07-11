@@ -3,13 +3,13 @@ const {expect} = require("chai");
 const toBytes32 = (str) => ethers.utils.formatBytes32String(str);
 const add = (str, num) => ethers.BigNumber.from(str).add(ethers.BigNumber.from(num));
 
-describe("Ballot contract", function() {
+describe("Ballot contract", () => {
     
     let ballot;
     let owner;
     let others;
 
-    beforeEach(async function () {
+    beforeEach(async () => {
         const Ballot = await ethers.getContractFactory("Ballot");
         [owner, ...others] = await ethers.getSigners();
 
