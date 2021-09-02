@@ -6,11 +6,11 @@ import "../libraries/LibDiamond.sol";
 
 contract TestFacet {
     event SetSecret(string secret);
-    event GetSecret(string secret);
+    // event GetSecret(string secret);
 
-    function getTopSecret() external returns (string memory) {
+    function getTopSecret() external view returns (string memory) {
         LibDiamond.DiamondStorage storage diamondStorage = LibDiamond.diamondStorage();
-        emit GetSecret(diamondStorage.topSecret);
+        // emit GetSecret(diamondStorage.topSecret);
         return diamondStorage.topSecret;
     }
     
